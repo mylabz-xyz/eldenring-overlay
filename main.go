@@ -2,29 +2,37 @@ package main
 
 import (
 	"embed"
-	"github.com/wailsapp/wails/v2"
-	"github.com/wailsapp/wails/v2/pkg/options"
+	"fmt"
+
+	"github.com/thedevsaddam/gojsonq/v2"
 )
 
 //go:embed frontend/dist
 var assets embed.FS
 
 func main() {
-	// Create an instance of the app structure
-	app := NewApp()
+	jq := gojsonq.New().File("./db/data/ammos.json")
+	res := jq.First()
+	 fmt.Println(res)
+	// // Create an instance of the app structure
+	// app := NewApp()
 
-	// Create application with options
-	err := wails.Run(&options.App{
-		Title:  "eldenring-overlay",
-		Width:  1024,
-		Height: 768,
-		Assets: assets,
-		Bind: []interface{}{
-			app,
-		},
-	})
+	// // Create application with options
+	// err := wails.Run(&options.App{
+	// 	Title:  "Elden Ring Overlay",
+	// 	Width:  1024,
+	// 	Height: 768,
+	// 	Assets: assets,
+	// 	AlwaysOnTop: true,
+	// 	        HideWindowOnClose: false,
+    //     RGBA:              &options.RGBA{R: 0, G: 0, B: 0, A: 255},
+    //     Frameless:         true,
+	// 	Bind: []interface{}{
+	// 		app,
+	// 	},
+	// })
 
-	if err != nil {
-		println("Error:", err)
-	}
+	// if err != nil {
+	// 	println("Error:", err)
+	// }
 }
