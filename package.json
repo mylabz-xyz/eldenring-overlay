@@ -1,5 +1,26 @@
 {
+  "name": "eldenring-overlay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron --enable-transparent-visuals .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mylabz-xyz/eldenring-overlay.git"
+  },
+  "author": "nopr9d",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mylabz-xyz/eldenring-overlay/issues"
+  },
+  "homepage": "https://github.com/mylabz-xyz/eldenring-overlay#readme",
   "devDependencies": {
-    "@babel/types": "^7.17.10"
+    "electron": "^18.2.0"
+  },
+  "dependencies": {
+    "electron-reload": "^2.0.0-alpha.1"
   }
 }
